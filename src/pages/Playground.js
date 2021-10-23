@@ -12,9 +12,14 @@ import Avatar from "../components/avatar/Avatar";
 import User from "../assets/user.jpg";
 import UserOne from "../assets/user1.jpg";
 import UserTwo from "../assets/user2.jpg";
+import Toast from "../components/toast/Toast";
+import Modal from "../components/modal/Modal";
 
 export default function Playground() {
   const [showLoader, setShowLoader] = useState(false);
+  const [showToastOne, setShowToastOne] = useState(false);
+  const [showToastTwo, setShowToastTwo] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const initLabels = () => {
     return [
       {
@@ -87,82 +92,133 @@ export default function Playground() {
     setShowLoader(true);
   };
   return (
-    <div className="playground">
-      <Text type="h1" value="Inputs" />
-      <Divider />
-      <Input type="text" placeholder="John" label="First name" />
-      <Input type="text" placeholder="Doe" label="Last name" />
-      <Input type="number" placeholder="23" label="Age" />
-      <Input type="password" placeholder="****" label="Password" />
-      <Input type="date" label="Select date" />
-      <Select
-        list={initLabels()}
-        label="Gender"
-        selected="Other"
-        onChange={(e) => {
-          alert(e.target.value);
-        }}
-      />
-      <Text type="h1" value="Buttons" />
-      <Divider />
-      <Button title="Click" variant="black" />
-      {!showLoader && (
-        <Button
-          title="Submit"
-          variant="gray"
-          onClick={(e) => handleSubmit(e)}
+    <div>
+      <div className="playground">
+        <Text type="h1" value="Inputs" />
+        <Divider />
+        <Input type="text" placeholder="John" label="First name" />
+        <Input type="text" placeholder="Doe" label="Last name" />
+        <Input type="number" placeholder="23" label="Age" />
+        <Input type="password" placeholder="****" label="Password" />
+        <Input type="date" label="Select date" />
+        <Select
+          list={initLabels()}
+          label="Gender"
+          selected="Other"
+          onChange={(e) => {
+            alert(e.target.value);
+          }}
         />
-      )}
-      <Spinner show={showLoader} />
-      <Button title="Login" />
-      <Button title="Register" variant="green" />
-      <Button title="Create Account" variant="red" />
-      <Button title="Signup" variant="yellow" />
-      <Button title="Delete" variant="white" />
-      <Text type="h1" value="Texts" />
-      <Divider />
-      <Text type="h1" value="Header 1" />
-      <Text type="h2" value="Header 2" />
-      <Text type="h3" value="Header 3" />
-      <Text type="h4" value="Header 4" />
-      <Text type="h5" value="Header 5" />
-      <Text type="h6" value="Header 6" />
+        <Text type="h1" value="Buttons" />
+        <Divider />
+        <Button title="Click" variant="black" />
+        {!showLoader && (
+          <Button
+            title="Submit"
+            variant="gray"
+            onClick={(e) => handleSubmit(e)}
+          />
+        )}
+        <Spinner show={showLoader} />
+        <Button title="Login" />
+        <Button title="Register" variant="green" />
+        <Button title="Create Account" variant="red" />
+        <Button title="Signup" variant="yellow" />
+        <Button title="Delete" variant="white" />
+        <Text type="h1" value="Texts" />
+        <Divider />
+        <Text type="h1" value="Header 1" />
+        <Text type="h2" value="Header 2" />
+        <Text type="h3" value="Header 3" />
+        <Text type="h4" value="Header 4" />
+        <Text type="h5" value="Header 5" />
+        <Text type="h6" value="Header 6" />
 
-      <Text
-        type="p"
-        value="This is a paragrapgh. sit amet consectetur adipisicing elit. Autem ipsa doloribus est eveniet officia voluptatum rem quia dol."
-      />
-      <Text type="h1" value="Skeletons" />
-      <Divider />
-      <Skeleton type="text" />
-      <Skeleton type="text" />
-      <Skeleton type="text" />
-      <Skeleton type="image" />
+        <Text
+          type="p"
+          value="This is a paragrapgh. sit amet consectetur adipisicing elit. Autem ipsa doloribus est eveniet officia voluptatum rem quia dol."
+        />
+        <Text type="h1" value="Skeletons" />
+        <Divider />
+        <Skeleton type="text" />
+        <Skeleton type="text" />
+        <Skeleton type="text" />
+        <Skeleton type="image" />
 
-      <Text type="h1" value="Alerts" />
-      <Divider />
-      <Alert type="red" value="Invalid Credentials" />
-      <Alert type="green" value="User Created" />
-      <Alert type="black" value="Fetched user details" />
-      <Alert type="yellow" value="Couldn't refresh page" />
-      <Alert type="blue" value="Post updated" />
-      <Alert type="white" value="Thank you for sigining up." />
+        <Text type="h1" value="Alerts" />
+        <Divider />
+        <Alert type="red" value="Invalid Credentials" />
+        <Alert type="green" value="User Created" />
+        <Alert type="black" value="Fetched user details" />
+        <Alert type="yellow" value="Couldn't refresh page" />
+        <Alert type="blue" value="Post updated" />
+        <Alert type="white" value="Thank you for sigining up." />
 
-      <Text type="h1" value="Tables" />
-      <Divider />
-      <Table type="black" columns={columns()} rows={rows()} />
-      <Table type="blue" columns={columns()} rows={rows()} />
-      <Table type="green" columns={columns()} rows={rows()} />
-      <Table type="white" columns={columns()} rows={rows()} />
+        <Text type="h1" value="Spinner" />
+        <Divider />
+        <Spinner show={true} />
 
-      <Text type="h1" value="Avatars" />
-      <Divider />
-      <Avatar value="ML" />
-      <Avatar value="JD" theme="black" />
-      <Avatar value="AP" theme="red" />
-      <Avatar type="image" value={User} onClick={(e) => console.log(e)} />
-      <Avatar type="image" value={UserOne} />
-      <Avatar type="image" value={UserTwo} />
+        <Text type="h1" value="Tables" />
+        <Divider />
+        <Table type="black" columns={columns()} rows={rows()} />
+        <Table type="blue" columns={columns()} rows={rows()} />
+        <Table type="green" columns={columns()} rows={rows()} />
+        <Table type="white" columns={columns()} rows={rows()} />
+
+        <Text type="h1" value="Avatars" />
+        <Divider />
+        <Avatar value="ML" />
+        <Avatar value="JD" theme="black" />
+        <Avatar value="AP" theme="red" />
+        <Avatar type="image" value={User} onClick={(e) => console.log(e)} />
+        <Avatar type="image" value={UserOne} />
+        <Avatar type="image" value={UserTwo} />
+        <Toast
+          type="black"
+          header="Top Right"
+          show={showToastTwo}
+          direction="right"
+        />
+        <Toast
+          type="red"
+          header="Top Left"
+          show={showToastOne}
+          direction="left"
+        />
+
+        <Text type="h1" value="Toasts" />
+        <Divider />
+        <Button
+          title="Left toast"
+          variant="red"
+          onClick={() => setShowToastOne(showToastOne ? false : true)}
+        />
+        <Button
+          title="Right toast"
+          variant="black"
+          onClick={() => setShowToastTwo(showToastTwo ? false : true)}
+        />
+
+        <Text type="h1" value="Modal" />
+        <Divider />
+
+        <Button
+          title={showModal ? "Close Modal" : "Open Modal"}
+          onClick={() => setShowModal(showModal ? false : true)}
+        />
+      </div>
+      <Modal
+        header="Sign up"
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        submit={() => console.log("submit")}
+        successBtnText="OK"
+      >
+        <Text
+          type="p"
+          value="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias exceptur"
+        />
+      </Modal>
     </div>
   );
 }

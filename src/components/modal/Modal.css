@@ -1,0 +1,33 @@
+.nss-modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.226);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.nss-modal--box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: #fff;
+}
+.nss-modal__header {
+  border-bottom: 1px solid rgb(196, 196, 196);
+  padding: 0.5rem 1rem;
+}
+.nss-modal__body {
+  padding: 0.5rem 1rem;
+}
+
+.nss-modal__footer {
+  width: 100%;
+  border-top: 1px solid rgb(196, 196, 196);
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+}

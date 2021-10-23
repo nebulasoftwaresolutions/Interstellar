@@ -1,0 +1,19 @@
+.nss-toast {
+  width: 300px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 3px 10px;
+  border: 1px solid rgb(172, 172, 172);
+  border-radius: 3px;
+  margin: 0.5rem 0;
+  position: fixed;
+  z-index: 1000;
+  transition: 1s;
+}
+.nss-toast__header {
+  border: 1px solid rgb(172, 172, 172);
+}
+
+.nss-toast__body {
+  min-height: 50px;
+  color: rgb(94, 94, 94);
+}
