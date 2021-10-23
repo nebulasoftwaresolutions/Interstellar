@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import AppBar from "./components/appbar/AppBar";
+import Playground from "./pages/Playground";
+import Text from "./components/text/Text";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar
+        title="Interstellar"
+        onClick={() => console.log("some logic here")}
+      >
+        <ul>
+          <Text type="li" value="Components" />
+          <Text type="li" value="Support" />
+          <Text type="li" value="Github" />
+        </ul>
+      </AppBar>
+      <Playground />
     </div>
   );
 }

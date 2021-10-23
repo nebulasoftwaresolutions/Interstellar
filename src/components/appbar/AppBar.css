@@ -1,0 +1,27 @@
+.nss-appbar {
+  background-color: #4242da;
+  padding: 1rem 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nss-appbar ul {
+  font-weight: 600;
+  list-style-type: none;
+  display: flex;
+}
+.nss-appbar li {
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+.nss-appbar h3 {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .nss-appbar ul {
+    display: none;
+  }
+}

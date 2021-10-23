@@ -1,0 +1,15 @@
+.nss-select {
+  padding: 0 0.5rem;
+  margin: 1rem 0;
+}
+.nss-select label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.nss-select select {
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 3px;
+  color: #333;
+  padding: 0.75rem 0.5rem;
+  width: 100%;
+}

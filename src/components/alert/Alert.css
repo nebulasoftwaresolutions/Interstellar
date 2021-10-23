@@ -1,0 +1,9 @@
+.nss-alert {
+  padding: 0 1rem;
+  margin: 0.5rem 0;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 3px 10px;
+  border-radius: 3px;
+}
+.nss-alert p {
+  padding: 0.5rem 0;
+}

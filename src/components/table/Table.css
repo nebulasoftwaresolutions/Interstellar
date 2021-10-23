@@ -1,0 +1,24 @@
+.nss-table {
+  overflow-x: scroll;
+  margin: 0.5rem 0;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 3px 10px;
+  border-radius: 3px;
+}
+.nss-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.nss-table th,
+.nss-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+.nss-table th {
+  padding: 1rem 0.5rem;
+}
+.nss-table tbody tr:nth-child(even) {
+  background: #eee;
+}

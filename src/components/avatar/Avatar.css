@@ -1,0 +1,26 @@
+.nss-avatar {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.nss-avatar h3 {
+  font-size: 1.25rem;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  padding: 0;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+.nss-avatar img {
+  width: 100%; /* or any custom size */
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0.5rem 0;
+}
